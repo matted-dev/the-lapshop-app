@@ -1,0 +1,49 @@
+<h1>Add a new product</h1>
+
+<%= form_for @product do |f| %>
+  <p>
+    <%= f.label :title %><br/>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :size %><br/>
+    <%= f.text_field :size %>
+  </p>
+
+  <p>
+    <%= f.label :processor %><br/>
+    <%= f.text_field :processor %>
+  </p>
+
+  <p>
+    <%= f.label :ram %><br/>
+    <%= f.text_field :ram %>
+  </p>
+
+  <p>
+    <%= f.label :storage %><br/>
+    <%= f.text_field :storage %>
+  </p>
+
+  <p>
+    <%= f.label :battery %><br/>
+    <%= f.text_field :battery %>
+  </p>
+
+  <p>
+    <%= f.label :price %><br/>
+    <%= f.text_field :price %>
+  </p>
+
+  <p>
+    <%= f.label :description %><br/>
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<!-- title, size, processor, ram, storage, battery, price, description -->
