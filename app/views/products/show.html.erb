@@ -8,3 +8,7 @@
 <p>Battery: <%= @product.battery %></p>
 <p>Price: <%= @product.price %></p>
 <p>Description: <%= @product.description %></p>
+
+<%= link_to "Edit this product", edit_product_path(@product) %>
+
+<%= link_to "Back to all products", products_path %>

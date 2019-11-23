@@ -1,0 +1,20 @@
+<h1>All products</h1>
+
+<%= link_to "Create new product", new_product_path %>
+
+<div>
+  <% @products.each do |product| %>
+    <div>
+      <div><%= product.title %></div>
+      <div><%= product.size %></div>
+      <div><%= product.processor %></div>
+      <div><%= product.ram %></div>
+      <div><%= product.storage %></div>
+      <div><%= product.battery %></div>
+      <div><%= product.price %></div>
+      <div><%= product.description %></div>
+      <%= link_to "More Details", product_path(product) %>
+    </div>
+  <% end %>
+
+</div>
