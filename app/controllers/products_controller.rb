@@ -35,18 +35,18 @@ def update
     render 'edit'
   end
 end
-  
 
+def show
+  @product = Product.find(params[:id])
+end
 
+def destroy
+  @product = Product.find(params[:id])
 
-
-
-
-
-
-  def show
-    @product = Product.find(params[:id])
-  end
+  @product.destroy
+  flash[:notice] = "Product was successfully deleted"
+  redirect_to products_path
+end
 
 
   private 

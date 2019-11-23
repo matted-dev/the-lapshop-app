@@ -13,7 +13,9 @@
       <div><%= product.battery %></div>
       <div><%= product.price %></div>
       <div><%= product.description %></div>
+      <%= link_to "Edit this product", edit_product_path(product) %>
       <%= link_to "More Details", product_path(product) %>
+      <%= link_to "Delete this product", product_path(product), method: :delete, data: {confirm: "Are you sure?"} %>
     </div>
   <% end %>
 
