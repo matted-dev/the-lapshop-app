@@ -1,0 +1,6 @@
+// QUERY MANAGER
+@mixin respond($breakpoint) {
+  @if $breakpoint == 550 {
+      @media only screen and (min-width: 34.37em) { @content; }  // 550px
+  }
+}

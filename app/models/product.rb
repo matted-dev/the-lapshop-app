@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
   has_one_attached :image
-  validates :title, presence: true, length: {minimum: 3, maximum: 50}
+  validates :title, presence: true, length: {minimum: 3, maximum: 25}
   validates :size, presence: true, length: {minimum: 3, maximum: 15}
   validates :processor, presence: true, length: {minimum: 3, maximum: 50}
   validates :ram, presence: true, length: {minimum: 3, maximum: 15}

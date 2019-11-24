@@ -1,0 +1,70 @@
+form {
+  text-align: left;
+
+  & p {
+    max-width: 45rem;
+    margin: 0 auto;
+  }
+
+  & p:not(:last-child) {
+    margin-bottom: 1.2rem;
+  }
+
+  & label {
+    font-size: 1.8rem;
+  }
+
+  & input,
+  & textarea {
+    font-size: 1.6rem;
+    padding: 1rem 1rem;
+    width: 100%;
+    border: 1px solid $color-gray;
+    border-radius: 3px;
+  }
+
+  & textarea {
+    font-family: inherit;
+    width: 100%;
+    min-height: 28rem;
+  }
+
+  // UPLOAD IMAGE BUTTON
+
+  // Hide regular upload
+  & input[type=file] {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+
+  // Style the label as the button
+  & input[type=file] + label {
+    padding: .6rem 1.4rem;
+    border-radius: 3px;
+    color: $color-white;
+    background-color: $color-black;
+    display: inline-block;
+    margin-bottom: 2rem;
+  }
+
+  & input[type=file]:focus + label,
+  & input[type=file] + label:hover {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+  }
+
+  & input[type=submit] {
+    height: 5rem;
+  }
+
+  @media(hover: hover) {
+    & input[type=file] + label {
+      cursor: pointer; /* "hand" cursor */
+    }
+  }
+}
+

@@ -1,25 +1,32 @@
-<h1>All products</h1>
+<%= link_to "Add new product", new_product_path, :class => "btn btn--black btn--create btn--add-new" %>
 
-<%= link_to "Create new product", new_product_path %>
+<section class="products">
 
-<div>
   <% @products.each do |product| %>
-    <div>
-      <div><%= product.title %></div>
-      <div><%= product.size %></div>
-      <div><%= product.processor %></div>
-      <div><%= product.ram %></div>
-      <div><%= product.storage %></div>
-      <div><%= product.battery %></div>
-      <div><%= product.price %></div>
-      <div><%= product.description %></div>
-      <% if product.image.attached? %>
-        <div><%= image_tag(product.image) %></div>
+    <article class="products__card">
+      <!-- IMAGE -->
+      <%= link_to product_path(product) do %>
+        <% if product.image.attached? %>
+          <div class="products__card__img"><%= image_tag(product.image) %></div>
+        <% else %>
+          <div class="products__card__img"><%= image_tag("generic-product-placeholder.jpg", :alt => product.title) %></div>
+        <% end %>
       <% end %>
-      <%= link_to "Edit this product", edit_product_path(product) %>
-      <%= link_to "More Details", product_path(product) %>
-      <%= link_to "Delete this product", product_path(product), method: :delete, data: {confirm: "Are you sure?"} %>
-    </div>
+
+      <!-- TITLE & PRICE -->
+      <div class="products__card__info">
+        <div class="products__card__title"><%= product.title %></div>
+        <div class="products__card__price">£<%= product.price %></div>
+      </div>
+
+      <!-- LINKS -->
+      <div class="products__card__btn-box">
+        <%= link_to "More Details", product_path(product), :class => "btn btn--orange btn--more products__card__btn--more" %>
+        <a class="btn btn--red btn--add">Add to cart</a>
+      </div>
+      <!--<%= link_to "Edit this product", edit_product_path(product) %>
+      <%= link_to "Delete this product", product_path(product), method: :delete, data: {confirm: "Are you sure?"} %>-->
+    </article>
   <% end %>
 
-</div>
+</section>

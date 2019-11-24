@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   root 'products#index'
 
+  get 'pages/home', to: 'pages#home'
+
   resources :products
 
 end

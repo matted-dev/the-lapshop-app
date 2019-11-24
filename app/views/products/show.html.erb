@@ -1,17 +1,31 @@
-<h1>Showing the selected product</h1>
+<section class="product__info">
+  <h1 class="product__info__heading"><%= @product.title %></h1>
 
-<p>Title: <%= @product.title %></p>
-<p>Size: <%= @product.size %></p>
-<p>Processor: <%= @product.processor %></p>
-<p>RAM: <%= @product.ram %></p>
-<p>Storage: <%= @product.storage %></p>
-<p>Battery: <%= @product.battery %></p>
-<p>Price: <%= @product.price %></p>
-<p>Description: <%= @product.description %></p>
-<% if @product.image.attached? %>
-  <p>Image: <%=  image_tag(@product.image) %></p>
-<% end %>
+  <% if @product.image.attached? %>
+    <div class="product__info__img"><%= image_tag(@product.image) %></div>
+  <% else %>
+    <div class="product__info__img"><%= image_tag("generic-product-placeholder.jpg", :alt => @product.title) %></div>
+  <% end %>
 
-<%= link_to "Edit this product", edit_product_path(@product) %>
+  <div class="product__info__price">£<%= @product.price %></div>
 
-<%= link_to "Back to all products", products_path %>
+  <div class="specs-box">
+    <h3 class="product__info__title">Specs</h3>
+    <div>Size: <%= @product.size %></div>
+    <div>Processor: <%= @product.processor %></div>
+    <div>RAM: <%= @product.ram %></div>
+    <div>Storage: <%= @product.storage %></div>
+    <div>Battery: <%= @product.battery %></div>
+  </div>
+
+  <div class="description-box">
+    <h3 class="product__info__title">Description</h3>
+    <div><%= @product.description %></div>
+  </div>
+
+
+  <%= link_to "Edit this product", edit_product_path(@product), :class => "btn btn--orange btn--large" %>
+
+  <%= link_to "Back to all products", products_path, :class => "btn btn--black btn--large btn--form" %>
+
+</section>
