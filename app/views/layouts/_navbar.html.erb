@@ -5,6 +5,12 @@
       <span class="header__logo--lapshop">Lapshop</span>
     </div>
 
-    <div class="header__signin"><a href="/">Sign in</a></div>
+  <% if current_user %>
+    <div class="header__signin"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></div>
+  <% else %>
+    <div class="header__signin"><%= link_to "Sign up", new_user_registration_path %></div>
+    <div class="header__signin"><%= link_to "Sign in", new_user_session_path %></div>
+  <% end %>
+    
   </div>
 </div>
