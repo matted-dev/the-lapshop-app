@@ -8,6 +8,9 @@
 <p>Battery: <%= @product.battery %></p>
 <p>Price: <%= @product.price %></p>
 <p>Description: <%= @product.description %></p>
+<% if @product.image.attached? %>
+  <p>Image: <%=  image_tag(@product.image) %></p>
+<% end %>
 
 <%= link_to "Edit this product", edit_product_path(@product) %>
 

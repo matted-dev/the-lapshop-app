@@ -51,6 +51,6 @@ end
 
   private 
     def product_params
-      params.require(:product).permit(:title, :size, :processor, :ram, :storage, :battery, :price, :description)
+      params.require(:product).permit(:title, :size, :processor, :ram, :storage, :battery, :price, :description, :image)
     end
 end
