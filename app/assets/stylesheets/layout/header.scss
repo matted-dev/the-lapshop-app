@@ -34,8 +34,37 @@
     }
   }
 
-  &__signin a {
+}
+
+.user-box {
+  display: flex;
+  align-items: center;
+  color: $color-text-white;
+  font-size: 1.8rem;
+
+  & > div:not(:first-child) {
+    margin-left: 5rem;
+  }
+
+  &__cart {
+    display: flex;
+    align-items: center;
+  }
+
+  &__cart-icon {
+    width: 3rem;
+    margin-left: 1rem;
+
+    & img {
+      width: 100%;
+    }
+  }
+
+  &__action a {
     color: $color-text-white;
-    font-size: 1.8rem;
+  }
+
+  &__signout {
+    color: $color-gray;
   }
 }
