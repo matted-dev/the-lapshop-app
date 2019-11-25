@@ -1,0 +1,29 @@
+<section class="cart">
+  <h1 class="heading-primary">Cart</h1>
+  
+  <ul class="cart__list">
+
+    <% @cart.line_items.each do |line_item| %>
+
+      <li class="cart__item">
+        <div class="cart__item__info">
+          <div class="cart__item__title">
+            <%= line_item.product.title %>
+          </div>
+          <div class="cart__item__price">
+            Price: <%= to_pounds(line_item.product.unit_price) %>
+          </div>
+        </div>
+        <%= link_to "Remove item", line_item_path(line_item), :class => "btn btn--black btn--create cart__item__btn", method: :delete %>
+      </li>
+      
+    <% end %>
+  </ul>
+  <h3>Sub total: <%= to_pounds(@cart.sub_total) %></h3>
+
+
+  <%= link_to "Empty cart", cart_path(@current_cart),method: :delete, data: {confirm: "Are you sure?"} %>
+  <p>
+    <%= link_to "Back to products", root_path %>
+  </p>
+</div>

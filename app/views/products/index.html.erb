@@ -16,13 +16,17 @@
       <!-- TITLE & PRICE -->
       <div class="products__card__info">
         <div class="products__card__title"><%= product.title %></div>
-        <div class="products__card__price">£<%= product.price %></div>
+        <div class="products__card__price">£<%= product.unit_price %></div>
       </div>
 
       <!-- LINKS -->
       <div class="products__card__btn-box">
         <%= link_to "More Details", product_path(product), :class => "btn btn--orange btn--more products__card__btn--more" %>
-        <a class="btn btn--red btn--add">Add to cart</a>
+        <!--<a class="btn btn--red btn--add">Add to cart</a>-->
+        <% if current_user %>
+          <%= button_to "Add to cart", line_items_path(:product_id => product.id, :product_name => product.title, :unit_price => product.unit_price), :class => "btn btn--red btn--add" %>
+        <% end %>
+        
       </div>
       <!--<%= link_to "Edit this product", edit_product_path(product) %>
       <%= link_to "Delete this product", product_path(product), method: :delete, data: {confirm: "Are you sure?"} %>-->

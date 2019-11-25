@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_24_231939) do
+ActiveRecord::Schema.define(version: 2019_11_25_111739) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -33,6 +33,21 @@ ActiveRecord::Schema.define(version: 2019_11_24_231939) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "line_items", force: :cascade do |t|
+    t.integer "quantity"
+    t.integer "product_id"
+    t.integer "cart_id"
+    t.integer "order_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "unit_price"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "title"
     t.string "size"
@@ -40,7 +55,7 @@ ActiveRecord::Schema.define(version: 2019_11_24_231939) do
     t.string "ram"
     t.string "storage"
     t.string "battery"
-    t.integer "price"
+    t.integer "unit_price"
     t.text "description"
     t.datetime "created_at"
     t.datetime "updated_at"

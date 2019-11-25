@@ -1,5 +1,5 @@
 <section class="product__info">
-  <h1 class="product__info__heading"><%= @product.title %></h1>
+  <h1 class="product__info__heading heading-primary"><%= @product.title %></h1>
 
   <% if @product.image.attached? %>
     <div class="product__info__img"><%= image_tag(@product.image) %></div>
@@ -7,7 +7,7 @@
     <div class="product__info__img"><%= image_tag("generic-product-placeholder.jpg", :alt => @product.title) %></div>
   <% end %>
 
-  <div class="product__info__price">£<%= @product.price %></div>
+  <div class="product__info__price">£<%= @product.unit_price %></div>
 
   <div class="specs-box">
     <h3 class="product__info__title">Specs</h3>

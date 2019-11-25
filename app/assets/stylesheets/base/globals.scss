@@ -11,11 +11,15 @@ body {
 }
 
 main {
-  margin-top: 6rem;   // Offset by header height
+  margin-top: 11rem;   // Offset by header height
   padding: 3rem 1rem;
   background-color: $color-primary;
   text-align: center;
   min-height: calc(100vh - 6rem);  // Always at least browser height
+
+  @include respond(550) {
+    margin-top: 6rem;
+  }
 }
 
 section {
@@ -24,4 +28,8 @@ section {
   border-radius: 5px;
   max-width: 100rem;
   margin: 3rem auto 0;
+}
+
+ul li {
+  list-style: none;
 }

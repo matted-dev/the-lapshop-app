@@ -56,6 +56,11 @@
       width: 90%;
       margin: 0 auto;
 
+      & form input[type=submit] {
+        height: 4rem;
+        padding: .4rem 2rem;
+      }
+
       & a:first-child {
         margin-bottom: 1rem;
       }
