@@ -2,16 +2,16 @@
 
 * Make sure Ruby & Rails are installed on your system
 
-* Clone the project
-  'code' https://github.com/matted-dev/the-lapshop-app.git
+* Clone the project\
+  `https://github.com/matted-dev/the-lapshop-app.git`
 
-* Install all dependencies 
-  'code' bundle install
+* Install all dependencies\
+  `bundle install`
   
-* Create databse, migrate schema & populate
-  'code' rails db:create
-  'code' rails db:migrate
-  'code' rails db:seed
+* Create databse, migrate schema & populate\
+  `rails db:create`
+  `rails db:migrate`
+  `rails db:seed`
   
-* Start the app
-  'code' rails s
+* Start the app\
+  `rails s`
