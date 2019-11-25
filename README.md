@@ -1,24 +1,17 @@
-# README
+# How to use
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Make sure Ruby & Rails are installed on your system
 
-Things you may want to cover:
+* Clone the project
+  'code' https://github.com/matted-dev/the-lapshop-app.git
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Install all dependencies 
+  'code' bundle install
+  
+* Create databse, migrate schema & populate
+  'code' rails db:create
+  'code' rails db:migrate
+  'code' rails db:seed
+  
+* Start the app
+  'code' rails s
