@@ -8,5 +8,5 @@ class Product < ApplicationRecord
   validates :storage, presence: true, length: {minimum: 3, maximum: 15}
   validates :battery, presence: true, length: {minimum: 3, maximum: 50}
   validates :unit_price, presence: true, length: {minimum: 3, maximum: 50}
-  validates :description, presence: true, length: {minimum: 3, maximum: 300}
+  validates :description, presence: true, length: {minimum: 3, maximum: 800}
 end
